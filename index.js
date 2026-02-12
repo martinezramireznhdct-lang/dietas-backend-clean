@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 const CREDENTIALS_PATH = "./credentials.json";
 const TOKEN_PATH = "./token.json";
 
@@ -197,5 +197,5 @@ app.post("/api/login", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Servidor activo en http://localhost:${PORT}`);
+  console.log(`Servidor activo en puerto ${PORT}`);
 });
