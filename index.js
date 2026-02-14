@@ -66,6 +66,10 @@ app.get("/", (req, res) => {
   res.json({ status: "Backend funcionando correctamente 🚀" });
 });
 
+app.get("/api/test", (req, res) => {
+  res.json({ ok: true });
+});
+
 app.post("/api/login", (req, res) => {
   const { email, password } = req.body;
 
